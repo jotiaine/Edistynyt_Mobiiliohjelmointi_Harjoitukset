@@ -22,4 +22,9 @@
         android:name="com.jonitiainen.harjoitukset.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/toDoDataFragment"
+        android:name="com.jonitiainen.harjoitukset.Fragments.ToDoDataFragment"
+        android:label="fragment_to_do_data"
+        tools:layout="@layout/fragment_to_do_data" />
 </navigation>

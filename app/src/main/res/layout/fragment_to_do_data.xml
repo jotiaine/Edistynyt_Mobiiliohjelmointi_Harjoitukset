@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.ToDoDataFragment">
+
+    <Button
+        android:id="@+id/btnGetToDoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get data" />
+
+    <Button
+        android:id="@+id/btnPostToDoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post data" />
+</LinearLayout>
