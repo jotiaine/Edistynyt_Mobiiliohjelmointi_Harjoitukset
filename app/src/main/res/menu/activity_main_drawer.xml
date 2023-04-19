@@ -21,6 +21,9 @@
             android:title="ToDo API" />
         <item
             android:id="@+id/mapsFragment"
-            android:title="Google Maps API" />
+            android:title="Google Maps and OpenWeatherMap APIs" />
+        <item
+            android:id="@+id/openStreetMapFragment"
+            android:title="OpenStreetMap API" />
     </group>
 </menu>

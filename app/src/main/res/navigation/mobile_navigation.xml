@@ -45,5 +45,26 @@
         android:id="@+id/mapsFragment"
         android:name="com.jonitiainen.harjoitukset.fragments.MapsFragment"
         android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" />
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_cityWeatherFragment"
+            app:destination="@id/cityWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityWeatherFragment"
+        android:name="com.jonitiainen.harjoitukset.fragments.CityWeatherFragment"
+        android:label="fragment_city_weather"
+        tools:layout="@layout/fragment_city_weather" >
+        <argument
+            android:name="lat"
+            app:argType="float" />
+        <argument
+            android:name="lon"
+            app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/openStreetMapFragment"
+        android:name="com.jonitiainen.harjoitukset.OpenStreetMapFragment"
+        android:label="fragment_open_street_map"
+        tools:layout="@layout/fragment_open_street_map" />
 </navigation>
