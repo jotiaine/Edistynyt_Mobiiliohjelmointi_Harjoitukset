@@ -1,4 +1,4 @@
-package com.jonitiainen.harjoitukset
+package com.jonitiainen.harjoitukset.datatypes.todo
 
 import com.google.gson.annotations.SerializedName
 

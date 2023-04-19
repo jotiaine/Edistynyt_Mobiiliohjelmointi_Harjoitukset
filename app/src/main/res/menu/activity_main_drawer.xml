@@ -19,5 +19,8 @@
         <item
             android:id="@+id/toDoDataFragment"
             android:title="ToDo API" />
+        <item
+            android:id="@+id/mapsFragment"
+            android:title="Google Maps API" />
     </group>
 </menu>

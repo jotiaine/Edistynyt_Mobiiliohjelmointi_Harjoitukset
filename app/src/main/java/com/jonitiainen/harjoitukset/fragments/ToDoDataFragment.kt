@@ -1,4 +1,4 @@
-package com.jonitiainen.harjoitukset.Fragments
+package com.jonitiainen.harjoitukset.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -6,13 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.GsonBuilder
-import com.jonitiainen.harjoitukset.ToDo
+import com.jonitiainen.harjoitukset.datatypes.todo.ToDo
+import com.jonitiainen.harjoitukset.ToDoAdapter
 import com.jonitiainen.harjoitukset.databinding.FragmentToDoDataBinding
 import org.json.JSONObject
 
@@ -21,6 +23,11 @@ class ToDoDataFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    // alustetaan viittaus adapteriin sekä luodaan LinearLayoutManager
+    // RecyclerView tarvitsee jonkin LayoutManagerin, joista yksinkertaisin on Linear
+    private lateinit var adapter: ToDoAdapter
+    private lateinit var linearLayoutManager: LinearLayoutManager
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +46,11 @@ class ToDoDataFragment : Fragment() {
         binding.btnPostToDoData.setOnClickListener {
             postToDos()
         }
+
+        // luodaan linear layout manager ja kytketään se ulkoasussa olevaan RecyclerViewiin
+        // tarkista, että recyclerviewin id: täsmää binding-layerin koodin kanssa
+        linearLayoutManager = LinearLayoutManager(context)
+        binding.recyclerViewToDos.layoutManager = linearLayoutManager
 
         return root
     }
@@ -69,8 +81,12 @@ class ToDoDataFragment : Fragment() {
 
                 // kokeillaan loopat läpi kaikki kommentit, tulostetaan jokainen email
                 for (item : ToDo in rows) {
-                    Log.d("TESTI", item.title.toString())
+                    Log.d("TESTI", "Title: " + item.title.toString())
                 }
+
+                //
+                adapter = ToDoAdapter(rows)
+                binding.recyclerViewToDos.adapter = adapter
             },
             Response.ErrorListener {
                 // typically this is a connection error

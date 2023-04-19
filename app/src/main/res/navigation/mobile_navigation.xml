@@ -24,7 +24,26 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/toDoDataFragment"
-        android:name="com.jonitiainen.harjoitukset.Fragments.ToDoDataFragment"
+        android:name="com.jonitiainen.harjoitukset.fragments.ToDoDataFragment"
         android:label="fragment_to_do_data"
-        tools:layout="@layout/fragment_to_do_data" />
+        tools:layout="@layout/fragment_to_do_data" >
+        <action
+            android:id="@+id/action_toDoDataFragment_to_toDoDetailFragment"
+            app:destination="@id/toDoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoDetailFragment"
+        android:name="com.jonitiainen.harjoitukset.fragments.ToDoDetailFragment"
+        android:label="fragment_to_do_detail"
+        tools:layout="@layout/fragment_to_do_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.jonitiainen.harjoitukset.fragments.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
