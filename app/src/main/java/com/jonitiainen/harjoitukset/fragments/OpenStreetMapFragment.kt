@@ -1,4 +1,4 @@
-package com.jonitiainen.harjoitukset
+package com.jonitiainen.harjoitukset.fragments
 
 import android.content.Context
 import android.os.Bundle

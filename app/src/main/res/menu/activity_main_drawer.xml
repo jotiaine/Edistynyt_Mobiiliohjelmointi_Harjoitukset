@@ -21,7 +21,7 @@
             android:title="ToDo API" />
         <item
             android:id="@+id/mapsFragment"
-            android:title="Google Maps and OpenWeatherMap APIs" />
+            android:title="Google Maps API" />
         <item
             android:id="@+id/openStreetMapFragment"
             android:title="OpenStreetMap API" />
@@ -31,5 +31,11 @@
         <item
             android:id="@+id/feedbackSendFragment"
             android:title="Feedback Send" />
+        <item
+            android:id="@+id/basicAuthFragment"
+            android:title="Basic Auth" />
+        <item
+            android:id="@+id/tempAccessFragment"
+            android:title="Temp Access Directus" />
     </group>
 </menu>
