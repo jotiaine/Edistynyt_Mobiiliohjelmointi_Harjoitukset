@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.android.volley.AuthFailureError
-import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -79,8 +78,8 @@ class TempAccessFragment : Fragment() {
     val password = BuildConfig.DIRECTUS_TEMP_PASSWORD
 
     // request queues for requests
-    var requestQueue: RequestQueue? = null
-    var refreshRequestQueue: RequestQueue? = null
+    private var requestQueue: RequestQueue? = null
+    private var refreshRequestQueue: RequestQueue? = null
 
     // state booleans to determine our session state
     var loggedIn: Boolean = false
@@ -95,7 +94,7 @@ class TempAccessFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTempAccessBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -109,7 +108,7 @@ class TempAccessFragment : Fragment() {
     // fragment entry point
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
-        super.onViewCreated(view, savedInstanceState);
+        super.onViewCreated(view, savedInstanceState)
 
         requestQueue = Volley.newRequestQueue(context)
         refreshRequestQueue = Volley.newRequestQueue(context)
@@ -119,10 +118,10 @@ class TempAccessFragment : Fragment() {
     }
 
     // button methods
-    fun loginAction()
+    private fun loginAction()
     {
         Log.d("TESTI", "login")
-        Log.d("TESTI", JSON_URL + " login")
+        Log.d("TESTI", "$JSON_URL login")
         requestQueue?.add(loginRequest)
     }
 
@@ -151,11 +150,11 @@ class TempAccessFragment : Fragment() {
     // REQUEST OBJECTS
 
     // REQUEST OBJECT 1: LOGIN
-    var loginRequest: StringRequest = object : StringRequest(
-        Request.Method.POST, LOGIN_URL,
+    private var loginRequest: StringRequest = object : StringRequest(
+        Method.POST, LOGIN_URL,
         Response.Listener { response ->
 
-            var responseJSON: JSONObject = JSONObject(response)
+            val responseJSON = JSONObject(response)
 
             // save the refresh token too if using refresh logic
             // refreshToken = responseJSON.get("refresh_token").toString()
@@ -201,10 +200,8 @@ class TempAccessFragment : Fragment() {
             var body = ByteArray(0)
             try {
                 // on how to create this newData -variable
-                var newData = ""
-
                 // a very quick 'n dirty approach to creating the needed JSON body for login
-                newData = "{\"email\":\"${username}\", \"password\": \"${password}\"}"
+                val newData = "{\"email\":\"${username}\", \"password\": \"${password}\"}"
 
                 // JSON to bytes
                 body = newData.toByteArray(Charsets.UTF_8)
@@ -217,8 +214,8 @@ class TempAccessFragment : Fragment() {
     }
 
     // REQUEST OBJECT 3 : ACTUAL DATA -> FEEDBACK
-    var dataRequest: StringRequest = object : StringRequest(
-        Request.Method.GET, JSON_URL+"/items/feedback",
+    private var dataRequest: StringRequest = object : StringRequest(
+        Method.GET, "$JSON_URL/items/feedback",
         Response.Listener { response ->
             Log.d("ADVTECH", response)
 
@@ -245,7 +242,7 @@ class TempAccessFragment : Fragment() {
             val headers = HashMap<String, String>()
             // headers["Accept"] = "application/json"
             // headers["Content-Type"] = "application/json; charset=utf-8"
-            headers["Authorization"] = "Bearer " + accessToken
+            headers["Authorization"] = "Bearer $accessToken"
             return headers
         }
 
