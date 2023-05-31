@@ -13,6 +13,8 @@ import com.hivemq.client.mqtt.mqtt3.message.connect.connack.Mqtt3ConnAck
 import com.jonitiainen.harjoitukset.BuildConfig
 import com.jonitiainen.harjoitukset.databinding.FragmentWeatherStationBinding
 import com.jonitiainen.harjoitukset.datatypes.weatherstation.WeatherStation
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.UUID
 
 class WeatherStationFragment : Fragment() {
@@ -84,7 +86,7 @@ class WeatherStationFragment : Fragment() {
                 // try/catch estää ohjelman tilttaamisen
                 try {
                     // muutetaan vastaanotettu data JSONista -> WeatherStation -luokan olioksi
-                    var item : WeatherStation = gson.fromJson(result, WeatherStation::class.java)
+                    var item: WeatherStation = gson.fromJson(result, WeatherStation::class.java)
                     Log.d("ADVTECH", item.d.get1().v.toString() + "C")
 
                     // asetetaan teksimuuttuja käyttöliittymään, jossa on säätietoja
@@ -94,6 +96,12 @@ class WeatherStationFragment : Fragment() {
                     text += "\n"
                     text += "Humidity: ${humidity}%"
 
+                    val sdf = SimpleDateFormat("HH:mm:ss")
+                    val currentDate = sdf.format(Date())
+
+                    var dataText: String =
+                        "${currentDate} - Temperature: ${temperature}℃ - Humidity: ${humidity}%"
+
                     // koska MQTT-plugin ajaa koodia ja käsittelee dataa
                     // tausta-ajalla omassa säikeessään eli threadissa
                     // joudumme laittamaan ulkoasuun liittyvän koodin runOnUiThread-blokin-
@@ -101,9 +109,11 @@ class WeatherStationFragment : Fragment() {
                     activity?.runOnUiThread {
                         binding.textViewWeatherTest.text = text
                         binding.speedViewTemperature.speedTo(temperature.toFloat())
+                        binding.customTemperatureViewWeather.changeTemperature(temperature.toInt())
+
+                        binding.latestDataViewTemperature.addData(dataText)
                     }
-                }
-                catch(e : Exception) {
+                } catch (e: Exception) {
                     Log.d("ADVTECH", e.message.toString())
                     Log.d("ADVTECH", "Saattaa olla diagnostiikkadataa.")
                 }

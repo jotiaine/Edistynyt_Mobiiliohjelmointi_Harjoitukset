@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     android:layout_marginTop="20dp"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".fragments.CustomViewTesterFragment">
 
     <com.github.anastr.speedviewlib.SpeedView
         android:id="@+id/speedView"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:sv_maxSpeed="50"
@@ -19,9 +20,27 @@
         app:sv_withTremble="false" />
 
     <com.jonitiainen.harjoitukset.CustomTemperatureView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/customTemperatureView_test"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp" />
+        android:layout_margin="10dp" />
 
+    <Button
+        android:id="@+id/button_set_random_temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Temperature" />
+
+    <com.jonitiainen.harjoitukset.LatestDataView
+        android:id="@+id/latest_data_view_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_border" />
+
+    <Button
+        android:id="@+id/button_add_test_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Data" />
 </LinearLayout>
