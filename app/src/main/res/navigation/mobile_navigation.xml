@@ -26,7 +26,7 @@
         android:id="@+id/toDoDataFragment"
         android:name="com.jonitiainen.harjoitukset.fragments.ToDoDataFragment"
         android:label="fragment_to_do_data"
-        tools:layout="@layout/fragment_to_do_data" >
+        tools:layout="@layout/fragment_to_do_data">
         <action
             android:id="@+id/action_toDoDataFragment_to_toDoDetailFragment"
             app:destination="@id/toDoDetailFragment" />
@@ -35,7 +35,7 @@
         android:id="@+id/toDoDetailFragment"
         android:name="com.jonitiainen.harjoitukset.fragments.ToDoDetailFragment"
         android:label="fragment_to_do_detail"
-        tools:layout="@layout/fragment_to_do_detail" >
+        tools:layout="@layout/fragment_to_do_detail">
         <argument
             android:name="id"
             app:argType="integer"
@@ -45,7 +45,7 @@
         android:id="@+id/mapsFragment"
         android:name="com.jonitiainen.harjoitukset.fragments.MapsFragment"
         android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" >
+        tools:layout="@layout/fragment_maps">
         <action
             android:id="@+id/action_mapsFragment_to_cityWeatherFragment"
             app:destination="@id/cityWeatherFragment" />
@@ -54,7 +54,7 @@
         android:id="@+id/cityWeatherFragment"
         android:name="com.jonitiainen.harjoitukset.fragments.CityWeatherFragment"
         android:label="fragment_city_weather"
-        tools:layout="@layout/fragment_city_weather" >
+        tools:layout="@layout/fragment_city_weather">
         <argument
             android:name="lat"
             app:argType="float" />
@@ -76,7 +76,7 @@
         android:id="@+id/feedbackSendFragment"
         android:name="com.jonitiainen.harjoitukset.fragments.FeedbackSendFragment"
         android:label="fragment_feedback_send"
-        tools:layout="@layout/fragment_feedback_send" >
+        tools:layout="@layout/fragment_feedback_send">
         <action
             android:id="@+id/action_feedbackSendFragment_to_feedbackReadFragment"
             app:destination="@id/feedbackReadFragment" />
@@ -111,4 +111,9 @@
         android:name="com.jonitiainen.harjoitukset.fragments.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/chartFragment"
+        android:name="com.jonitiainen.harjoitukset.fragments.ChartFragment"
+        android:label="fragment_chart"
+        tools:layout="@layout/fragment_chart" />
 </navigation>
