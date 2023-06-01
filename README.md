@@ -17,6 +17,7 @@ ViewHolder pattern and provides item click listeners for navigation to a detail 
 ![Post feedback](app/src/main/res/drawable/post_feedback.png)
 ![Detail feedback](app/src/main/res/drawable/feedback_detail.png)
 
+
 ## Custom Views
 
 LatestDataView: A custom compound view that displays the latest data. It dynamically adds data rows
@@ -28,6 +29,7 @@ the canvas, allowing the temperature value to be updated and the view to be visu
 ![Custom view tester 1](app/src/main/res/drawable/custom_view_tester1.png)
 ![Custom view tester 2](app/src/main/res/drawable/custom_view_tester2.png)
 
+
 ## Fragments
 
 ## Network-related Fragments
@@ -37,6 +39,7 @@ operations. It includes basic authentication and logs the response to the consol
 
 ![Basic auth](app/src/main/res/drawable/basic_auth.png)
 
+
 ## Directus
 
 FeedbackReadFragment: Retrieves feedback data from a server using the Volley library. It displays
@@ -44,6 +47,7 @@ the fetched feedback information on the UI.
 
 ![Directus feedbacks](app/src/main/res/drawable/directus_feedbacks.png)
 ![Directus read](app/src/main/res/drawable/directus_read.png)
+
 
 FeedbackSendFragment: Handles sending feedback data to a server using the Volley library. It creates
 a POST request, sets headers, and sends the data to the server.
@@ -54,9 +58,11 @@ a POST request, sets headers, and sends the data to the server.
 ![Directus users](app/src/main/res/drawable/directus_users.png)
 ![Directus users](app/src/main/res/drawable/directus_data.png)
 
+
 ### Insomnia
 ![Directus users](app/src/main/res/drawable/directus_insomnia.png)
 ![Directus users](app/src/main/res/drawable/directus_jsonviewer.png)
+
 
 CityWeatherFragment: Displays weather information for a specific city. It retrieves weather data
 from the OpenWeatherMap API using the Volley library.
@@ -66,37 +72,48 @@ from the OpenWeatherMap API using the Volley library.
 CalendarFragment: Displays a calendar using a third-party library called CustomCalendarView. It
 shows toast messages with selected date or month information.
 
+
 ChartFragment: Displays a line chart using the AAChartModel and AAChartView libraries. It connects
 to an MQTT broker, receives data payloads, and updates the chart series dynamically.
 ![Chart](app/src/main/res/drawable/chart.png)
 
+
 CustomViewTesterFragment: Tests custom views, including a speedometer and a temperature gauge. It
 connects to an MQTT broker, receives data payloads, and updates the UI elements based on the
 received data.
+![Directus users](app/src/main/res/drawable/mqtt_weather_station.png)
+![Directus users](app/src/main/res/drawable/hivemq_cloud.png)
+
 
 MapsFragment: Displays a Google Map using the Google Maps API. It initializes the map, sets up
 markers, and handles marker click events.
 ![Google maps](app/src/main/res/drawable/googlemaps_api.png)
 ![Google maps marker](app/src/main/res/drawable/googlemaps_marker.png)
 
+
 OpenStreetMapFragment: Displays a map using the OpenStreetMap library (osmdroid). It initializes the
 map, sets the tile source, zoom level, and adds a marker to a specific location.
 ![OpenStreetMap](app/src/main/res/drawable/openstreetmap.png)
+
 
 RemoteMessageFragment: Connects to an MQTT broker using the HiveMQ client library. It handles the
 MQTT connection and response.'
 ![HiveMQ](app/src/main/res/drawable/hive_mq.png)
 
+
 FeedbackDetailFragment: Displays detailed information about a to-do item. It fetches data from a
 JSON
 API and displays it on the UI.
+
 
 TempAccessFragment: Handles temporary access to a service using Volley for network requests. It
 manages login, token handling, and data retrieval functionalities.
 ![Temp access](app/src/main/res/drawable/temp_access.png)
 
+
 FeedbackDataFragment: Interacts with a remote service using Volley. It displays todo items in a
 RecyclerView and provides buttons for getting and posting todo data.
+
 
 WeatherStationFragment: Connects to an MQTT broker, receives MQTT messages containing weather data,
 and updates the UI elements with the received information.
@@ -105,6 +122,7 @@ and updates the UI elements with the received information.
 ![Calendar](app/src/main/res/drawable/calendar.png)
 
 ![Home animation](app/src/main/res/drawable/home_anim.png)
+
 
 These code files showcase a variety of functionalities, including network requests, data display,
 custom views, calendar integration, map integration, and MQTT communication.
