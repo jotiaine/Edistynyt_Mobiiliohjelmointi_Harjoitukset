@@ -37,6 +37,8 @@ operations. It includes basic authentication and logs the response to the consol
 
 ![Basic auth](app/src/main/res/drawable/basic_auth.png)
 
+## Directus
+
 FeedbackReadFragment: Retrieves feedback data from a server using the Volley library. It displays
 the fetched feedback information on the UI.
 
@@ -50,6 +52,11 @@ a POST request, sets headers, and sends the data to the server.
 ![Directus send 2](app/src/main/res/drawable/directus_send2.png)
 ![Directus send 3](app/src/main/res/drawable/directus_send3.png)
 ![Directus users](app/src/main/res/drawable/directus_users.png)
+![Directus users](app/src/main/res/drawable/directus_data.png)
+
+### Insomnia
+![Directus users](app/src/main/res/drawable/directus_insomnia.png)
+![Directus users](app/src/main/res/drawable/directus_jsonviewer.png)
 
 CityWeatherFragment: Displays weather information for a specific city. It retrieves weather data
 from the OpenWeatherMap API using the Volley library.
